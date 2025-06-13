@@ -1,13 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modo Oscuro - Estilo Terminal */
+  --dark-primary: #0a192f;
+  --dark-secondary: #112240;
+  --dark-accent: #64ffda;
+  --dark-text: #ccd6f6;
+  --dark-text-secondary: #8892b0;
+  --dark-border: #233554;
+  
+  /* Modo Claro - Estilo VS Code Light */
+  --light-primary: #ffffff;
+  --light-secondary: #ffffff;
+  --light-accent: #61dafb;
+  --light-text: #222f3e;
+  --light-text-secondary: #636e72;
+  --light-border: #dfe6e9;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    @apply font-sans antialiased bg-white text-light-text;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .bg-terminal {
+    @apply bg-dark-primary;
+  }
+
+  .bg-editor {
+    @apply bg-white;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 font-medium transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .dark .nav-link::after {
+    @apply bg-dark-accent;
+  }
+
+  .light .nav-link::after {
+    @apply bg-light-accent;
+  }
+
+  .dark .nav-link {
+    @apply text-dark-text hover:text-dark-accent;
+  }
+
+  .light .nav-link {
+    @apply text-light-text hover:text-light-accent;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+  }
+
+  .dark .section-title {
+    @apply text-dark-accent;
+  }
+
+  .light .section-title {
+    @apply text-light-accent;
+  }
+
+  .card {
+    @apply p-8 border transition-all duration-300;
+  }
+
+  .dark .card {
+    @apply bg-dark-secondary border-dark-border hover:border-dark-accent;
+  }
+
+  .light .card {
+    @apply bg-white border-light-border hover:border-light-accent;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-dark-accent text-dark-primary hover:bg-opacity-90 border-dark-accent;
+  }
+
+  .btn-secondary {
+    @apply border-dark-accent text-dark-accent hover:bg-dark-accent hover:text-dark-primary;
+  }
+
+  .light .btn-primary {
+    @apply bg-light-accent text-white hover:bg-opacity-90 border-light-accent;
+  }
+
+  .light .btn-secondary {
+    @apply border-light-accent text-light-accent hover:bg-light-accent hover:text-white;
+  }
+
+  .input, .textarea {
+    @apply w-full px-4 py-3 rounded-md border transition-all duration-300;
+  }
+
+  .dark .input, .dark .textarea {
+    @apply bg-dark-secondary border-dark-border text-dark-text focus:border-dark-accent;
+  }
+
+  .light .input, .light .textarea {
+    @apply bg-white border-light-border text-light-text focus:border-light-accent;
+  }
+
+  /* Efectos de terminal */
+  .terminal-text {
+    @apply font-mono;
+  }
+
+  .cursor {
+    @apply inline-block w-2 h-5 ml-1 bg-current animate-blink;
+  }
+
+  .light .cursor {
+    @apply bg-light-accent;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Estilo de código */
+  .code-block {
+    @apply font-mono text-sm p-4 rounded-md;
+  }
+
+  .dark .code-block {
+    @apply bg-dark-secondary text-dark-text;
+  }
+
+  .light .code-block {
+    @apply bg-light-secondary text-light-text;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply fixed w-full z-50 backdrop-blur-sm transition-all duration-300 bg-white;
+  }
+
+  .dark .navbar {
+    @apply bg-dark-primary;
+  }
+
+  .light .navbar {
+    @apply bg-white/95 backdrop-blur-sm border-b border-light-border shadow-sm;
+  }
+
+  .navbar-brand {
+    @apply font-mono font-bold;
+  }
+
+  .dark .navbar-brand {
+    @apply text-dark-accent;
+  }
+
+  .light .navbar-brand {
+    @apply text-light-accent;
+  }
+
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Section Spacing */
+  section {
+    @apply py-20 bg-white;
+  }
+
+  /* Grid Layouts */
+  .grid-layout {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+  }
+}
+
+.dark body {
+  @apply bg-dark-primary text-dark-text;
+}
+
+.dark .bg-terminal {
+  @apply bg-dark-primary;
+}
+
+.dark .bg-editor {
+  @apply bg-dark-primary;
+}
+
+.dark section {
+  @apply bg-dark-primary;
 }
