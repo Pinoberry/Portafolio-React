@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
       description: 'Una calculadora interactiva con funcionalidades básicas y diseño moderno.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/calculator.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/Calculadora',
       live: '#',
     },
     {
@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       description: 'Herramienta para seleccionar y gestionar colores con vista previa en tiempo real.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/colorpicker.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/ColorPicker',
       live: '#',
     },
     {
@@ -37,7 +37,7 @@ const Projects: React.FC = () => {
       description: 'Sistema de gestión básico con operaciones CRUD completas.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/crud.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/CrudBasico',
       live: '#',
     },
     {
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
       description: 'Clásico juego de Tic Tac Toe con interfaz moderna.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/tictactoe.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/Gato',
       live: '#',
     },
     {
@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
       description: 'Sistema de autenticación con validación de usuarios.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/login.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/Login',
       live: '#',
     },
     {
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
       description: 'Recreación del clásico juego Snake con controles intuitivos.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/snake.jpg',
-      github: '#',
+      github: 'https://github.com/Pinoberry/juegoSerpiente',
       live: '#',
     }
   ];
